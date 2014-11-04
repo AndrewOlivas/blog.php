@@ -1,12 +1,15 @@
 <?php
-// no closing tag needed
+	// no closing tag needed
  require_once(__DIR__ . "/../modal/database.php");
+ 	// see blog.php to see my comments about require_once and __DIR__
 
  $connection = new mysqli($host, $username, $password);
+	 // Represents a connection between PHP and a MySQL database.
+ 	 // The order has to be like the database.php
 
  if($connection->connect_error){
 	die("<p>Error: " . $connection->connect_error . "</p>");
-	// just in case it doesnt work it will show error
+	 //just in case it doesnt work it will show error
 
  }
 
