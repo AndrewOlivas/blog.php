@@ -1,3 +1,16 @@
 body{
 	background-color: aliceblue;
+	font-family: 'Cabin', sans-serif;
+	h1{
+		font-family: 'Cabin', sans-serif;
+	}
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (min-width : 375px) {
+	div{
+		max-width: 375px;
+	}
+
+    
 }
