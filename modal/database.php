@@ -1,7 +1,9 @@
 <?php
-// every time you want to create a new class, you have to put class followed by Database
+// Classes are used for representing data as objects.
+// calls functions from create-db 
+// class Database has to have the same name as the file
 class Database {
-	// private makes it only accessed by this file
+	// private makes it only accessed by this file, to hide code
 	private $connection;
 	private $host;
 	private $username;

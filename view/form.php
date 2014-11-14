@@ -15,25 +15,15 @@
 <form method="post" action="<?php echo $path . "controller/create-host.php" ?>" style="margin-left: 40%;">
 
 <style type="text/css">
-	body{
-		background-image:url(img/cat-wp.jpg);
-		background-repeat:no-repeat;
-
-   background-size:cover;
-
-   background-repeat:no-repeat;
-
-   -webkit-background-size:cover;
-
-   -moz-background-size:cover;
-
-   -o-background-size:cover;
-
-   background-size:cover;
-
-   background-position:center;
-	}
 	h1   {color:blue}
+html { 
+     background: url(img/cat-wp.jpg) no-repeat center center fixed; 
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+}
+	}
 Custom, iPhone Retina 
 @media (max-width : 375px) and (max-width: 482px) {
 	html,body {
