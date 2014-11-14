@@ -1,6 +1,6 @@
 <?php
 	// no closing tag needed
- require_once(__DIR__ . "/../modal/database.php");
+ require_once(__DIR__ . "/../modal/config.php");
  	// see blog.php to see my comments about require_once and __DIR__
 
  $connection = new mysqli($host, $username, $password);

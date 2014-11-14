@@ -21,9 +21,23 @@
 
    background-position:center;
 	}
-	/* visited link */
-    a:visited {
-    color: 	#000000;
+Custom, iPhone Retina 
+@media (max-width : 375px) and (max-width: 482px) {
+	html,body {
+		background-color: grey;
+	}
+}
+
+Small Devices, Ipads 
+@media (min-width : 768px) and (max-device-width: 1080px) {
+	html,body{
+		background-color: aliceblue;
+	}
+
+	a:link {
+    color: #000000;
+}
+
 }
 </style>
 

@@ -8,13 +8,16 @@ body{
 
 }
 
-/* Custom, iPhone Retina */ 
-/*@media only screen and (min-width : 375px) {
-	div{
-		max-width: 375px;
-	}*/
+ Custom, iPhone Retina 
+@media (max-width : 375px) and (max-width: 482px) {
+	html,body {
+		background-color: grey;
+	}
+}
 
-/* Small Devices, Ipads */
-/*@media only screen and (max-width : 768px) {
-
-}*/
+Small Devices, Ipads 
+@media (min-width : 768px) and (max-device-width: 1080px) {
+	html,body{
+		background-color: aliceblue;
+	}
+}
