@@ -20,13 +20,21 @@ class Database {
 	}
 	// opens connection to create-db.php
 	public function openConnection() {
-
+		$this->connection = new mysqli ($this->host, $this->username, $this->password, $this->database);
 	}
+	// ripped from create-db
+	if($this->connection->connect_error){
+	die("<p>Error: " . $this->connection->connect_error . "</p>");
+	 //just in case it doesnt work it will show error
+
+ 	}
 	// closes connection to create-db.php
 	public function closeConnection() {
 
 	}
 	// makes the query public
+	// every time you call on our query function you have to pass it a string 
+	// dont have to repeat yourself with this code,before you had to repeat five lines of code.
 	public function query($string) {
 
 
