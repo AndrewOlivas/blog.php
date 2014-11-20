@@ -2,9 +2,7 @@
 <?php
 	// need to reach model folder for the query
 	require_once(__DIR__ . "/../modal/config.php");
-	// creating a connection to the database usinf the info in database.php
-	$connection = new mysqli($host, $username, $password, $database);
-
+	
 	// filter is to make sure nothing bad is put in
 	$title = filter_input(INPUT_POST, "title", FILTER_SANITIZE_STRING);
 	$post = filter_input(INPUT_POST, "post", FILTER_SANITIZE_STRING);
@@ -19,4 +17,3 @@
 		echo "<p>$connection->error</p>";
 	}
 
-	$connection->close();

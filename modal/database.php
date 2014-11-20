@@ -17,6 +17,31 @@ class Database {
 		$this->username = $username;
 		$this->password = $password;
 		$this->database = $database;
+
+	// cut from create-db
+	$this->connection = new mysqli($host, $username, $password);
+	 // Represents a connection between PHP and a MySQL database.
+ 	 // The order has to be like the database.php
+
+ 	if($this->connection->connect_error){
+		die("<p>Error: " . $this->connection->connect_error . "</p>");
+	 //just in case it doesnt work it will show error
+
+ 	}
+
+ 	$exists = $connection->select_db($database);
+ 		// ! = false 
+ 		if (!$exists) {
+    $query = $connection->query("CREATE DATABASE $database"); 
+
+    if ($query) {
+    	echo "<p>Successfully created database: " . $database . "</p>";
+    	// note: this wont show up after the first one
+    	}
+ 	}
+ 	else {
+		echo "<p>Database already exists</p>";
+ 		}
 	}
 	// opens connection to create-db.php
 	public function openConnection() {
@@ -28,11 +53,12 @@ class Database {
 	 //just in case it doesnt work it will show error
 
  	}
+ 	// ends cut
 	// closes connection to create-db.php
 	public function closeConnection() {
 		// to check whether or not youve opened a connection
 		// isset is to check if there is information or not
-		// if no info, it will make it null, so no need to close the connectio
+		// if no info, it will make it null, so no need to close the connection
 		// no need to call this variable if no info is there
 		if (isset ($this->connection)) {
 			$this->connection->close();
