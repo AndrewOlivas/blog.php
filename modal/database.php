@@ -9,6 +9,7 @@ class Database {
 	private $username;
 	private $password;
 	private $database;
+	public $error;
 	// created variables, global, etc.
 	// public makes it able to be seen by other files
 	public function __construct($host, $username, $password, $database) {
@@ -48,10 +49,9 @@ class Database {
 		$this->connection = new mysqli ($this->host, $this->username, $this->password, $this->database);
 	}
 	// ripped from create-db
-	if($this->connection->connect_error){
-	die("<p>Error: " . $this->connection->connect_error . "</p>");
+	if($this->connection->connect_error) {
+		die("<p>Error: " . $this->connection->connect_error . "</p>");
 	 //just in case it doesnt work it will show error
-
  	}
  	// ends cut
 	// closes connection to create-db.php
@@ -74,6 +74,10 @@ class Database {
 		$this->connection();
 		// all info will be stored in $string
 		$query = $this->connection->query($string);
+
+		if (!$query) {
+			$this->error = $this->connection->error;
+		}
 
 		$this->closeConnection();
 
