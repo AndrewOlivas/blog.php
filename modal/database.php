@@ -30,29 +30,32 @@ class Database {
 
  	}
 
- 	$exists = $connection->select_db($database);
+ 	$exists = $this->connection->select_db($database);
  		// ! = false 
  		if (!$exists) {
-    $query = $connection->query("CREATE DATABASE $database"); 
+    		$query = $this->connection->query("CREATE DATABASE $database"); 
 
-    if ($query) {
+    		if ($query) {
     	echo "<p>Successfully created database: " . $database . "</p>";
     	// note: this wont show up after the first one
     	}
- 	}
+    }
+  
+ 	
  	else {
-		echo "<p>Database already exists</p>";
+			echo "<p>Database already exists</p>";
  		}
-	}
+ 	}
+	
 	// opens connection to create-db.php
 	public function openConnection() {
 		$this->connection = new mysqli ($this->host, $this->username, $this->password, $this->database);
+	
+		if($this->connection->connect_error) {
+			die("<p>Error: " . $this->connection->connect_error . "</p>");
+		}
 	}
 	// ripped from create-db
-	if($this->connection->connect_error) {
-		die("<p>Error: " . $this->connection->connect_error . "</p>");
-	 //just in case it doesnt work it will show error
- 	}
  	// ends cut
 	// closes connection to create-db.php
 	public function closeConnection() {
@@ -71,7 +74,7 @@ class Database {
 	public function query($string) {
 	// open database,query the database, get results, close database.
 		// this code is calling on a function
-		$this->connection();
+		$this->openConnection();
 		// all info will be stored in $string
 		$query = $this->connection->query($string);
 
