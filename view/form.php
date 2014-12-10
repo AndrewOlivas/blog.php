@@ -1,5 +1,12 @@
 <?php
 	require_once(__DIR__ . "/../modal/config.php");
+	require_once(__DIR__ . "/../controller/login-verify.php");
+
+	if (!authenticateUser()) {
+// redirects unlogged in user
+		header("Location: " . $path . "blog.php");
+		die();
+	}
 ?>
 <head>
 	<link rel="stylesheet" type="text/css" href="css/phpmain.css">	
@@ -16,29 +23,9 @@
 
 <style type="text/css">
 	h1   {color:blue}
-html { 
-     background: url(img/cat-wp.jpg) no-repeat center center fixed; 
-     -webkit-background-size: cover;
-     -moz-background-size: cover;
-     -o-background-size: cover;
-     background-size: cover;
-}
-	}
-Custom, iPhone Retina 
-@media (max-width : 375px) and (max-width: 482px) {
-	html,body {
-		background-color: grey;
-	}
-}
-
-Small Devices, Ipads 
-@media (min-width : 768px) and (max-device-width: 1080px) {
-	html,body{
+	body{
 		background-color: aliceblue;
 	}
-}
-
-}
 </style>
 
 <form>
