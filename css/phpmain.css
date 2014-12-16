@@ -1,5 +1,5 @@
-/*body{
-	background-color: blue;
+body{
+	background-image: ("ironman-wp.jpg");
 	font-family: 'Cabin', sans-serif;
 	h1{
 		font-family: 'Cabin', sans-serif;
@@ -7,7 +7,7 @@
 	h1   {color:blue}
 	
 
-}*/
+}
 
  Custom, iPhone Retina 
 @media (max-width : 375px) and (max-width: 482px) {

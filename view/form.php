@@ -8,14 +8,9 @@
 		die();
 	}
 ?>
-<head>
-	<link rel="stylesheet" type="text/css" href="css/phpmain.css">	
-</head>
-
 
 <!-- since its view, it should only be html -->
 <link href='http://fonts.googleapis.com/css?family=Cabin:700italic' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" type="text/css" href="css/phpmain.css">
 <h1 style="margin-left: 40%;"> Create Blog Post </h1>
 
 <!-- send infromation to input host -->
