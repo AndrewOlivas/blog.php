@@ -8,6 +8,11 @@
 	<title> Blog - PHP </title>
 </head>
 <body>
+<style type="text/css">
+	body{
+		background-color: grey;
+	}
+</style>
 
 <img src = "/_blog.php/img/marvel-wp.jpg" style="margin-left: 13%">
 
@@ -20,3 +25,4 @@
 
 	</ul>
 </nav>
+
